@@ -1,0 +1,9 @@
+// В этом файле должны быть стили для БЭМ-блока mini-banner, его элементов, 
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.mini-banner {
+
+  $block-name:                &; // #{$block-name}__element
+
+}

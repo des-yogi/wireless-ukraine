@@ -1,6 +1,5 @@
 {
   "blocks": {
-    "accordion": [],
     "breadcrumbs": [],
     "btn": [],
     "burger": [],
@@ -8,8 +7,15 @@
     "dropdown": [],
     "embed-responsive": [],
     "form": [],
+    "field-text": [
+      "--error"
+    ],
+    "field-checkbox": [
+      "__input-wrap--error"
+    ],
+    "field-actions": [],
+    "fields-group": [],
     "lang-switcher": [],
-    "loader": [],
     "logo": [],
     "main-nav": [],
     "modal": [],
@@ -18,30 +24,46 @@
     "page-footer": [],
     "page-header": [],
     "pagination": [],
-    "pie-chart": [],
     "scroll-link": [],
-    "sprite-png": [
-      "__demo"
-    ],
     "sprite-svg": [],
     "table": [],
     "table-mobile-scroll": [],
     "table-responsive": [],
     "tab": [],
     "to-top": [],
-    "typo": []
+    "typo": [],
+    "metismenu": [],
+    "hero": [],
+    "top-search": [],
+    "news-card": [],
+    "mini-banner": [],
+    "fb-wrapper": [],
+    "magazine-slider": [],
+    "award-slider": [],
+    "search-result": [],
+    "aside-news-card": [],
+    "aside-nav": [],
+    "page-404": [],
+    "letters": [],
+    "archive": [],
+    "content-page": [],
+    "contact-form": [],
+    "contact-block": [],
+    "usefull-links": [],
+    "copyrights": [],
+    "socials": []
   },
   "addCssBefore": [
     "./src/scss/variables.scss",
     "./src/scss/mixins.scss",
     "../../node_modules/swiper/css/swiper.css",
-    "../../node_modules/@fancyapps/fancybox/dist/jquery.fancybox.css"
+    "../../node_modules/@fancyapps/fancybox/dist/jquery.fancybox.css",
+    "../../node_modules/metismenu/dist/metisMenu.css"
   ],
   "addCssAfter": [
     "./src/scss/print.scss"
   ],
-  "singleCompiled": [
-  ],
+  "singleCompiled": [],
   "addJsBefore": [
     "./node_modules/picturefill/dist/picturefill.min.js",
     "./node_modules/blazy/blazy.min.js",
@@ -50,10 +72,10 @@
     "./node_modules/jquery/dist/jquery.min.js",
     "./node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js",
     "./node_modules/object-fit-images/dist/ofi.js",
+    "./node_modules/metismenu/dist/metisMenu.js",
     "./src/js/libs/popper.min.js",
     "./src/js/libs/util.js",
     "./src/js/libs/collapse.js"
-
   ],
   "addJsAfter": [
     "./src/js/global-script.js"
