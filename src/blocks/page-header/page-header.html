@@ -1,11 +1,66 @@
 <!--DEV
-
-Нужно убрать пробел между @-ами:
-
 @ @include('blocks/page-header/page-header.html')
-
 -->
 
 <header class="page-header" role="banner">
-  page-header
+  <div id="sticker" class="container  page-header__inner">
+
+    <a href="index.html" class="logo" title="Wireless Ukraine">
+      <svg width="95" height="22" role="img" alt="Wireless Ukraine logo"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#wireless-ukraine-logo"></use></svg>
+    </a>
+
+    <nav id="main-nav" class="main-nav  topbar-nav  is-hoverable  ">
+      <!-- collapse-main-nav -->
+      <ul id="metismenu" class="metismenu">
+
+        <li class="metismenu__item">
+          <a class="metismenu__link" href="#">Статьи</a>
+        </li>
+
+       <li class="metismenu__item  active">
+         <a class="has-arrow" href="#" aria-expanded="false">Новости</a>
+         <ul class="mm-collapse  metismenu__submenu">
+           <li class="active"><a href="#" class="metismenu__link">Новина 1</a></li>
+           <li><a href="#" class="metismenu__link">Новина 2</a></li>
+           <li><a href="#" class="metismenu__link">Новина 3</a></li>
+         </ul>
+       </li>
+
+       <li class="metismenu__item">
+         <a class="has-arrow" href="#" aria-expanded="false">Листи</a>
+         <ul class="mm-collapse  metismenu__submenu">
+           <li><a href="#" class="metismenu__link">Лист 1</a></li>
+           <li><a href="#" class="metismenu__link">Лист 2</a></li>
+           <li><a href="#" class="metismenu__link">Лист 3</a></li>
+         </ul>
+       </li>
+
+       <li class="metismenu__item">
+         <a class="metismenu__link" href="#">Фотогалерея</a>
+       </li>
+
+       <li class="metismenu__item">
+         <a class="metismenu__link" href="#">Архів</a>
+       </li>
+
+       <li class="metismenu__item">
+         <a class="metismenu__link" href="#">Контакты</a>
+       </li>
+
+      </ul>
+    </nav>
+
+    <div class="page-header__service-menu">
+      <div class="top-search">
+        <form id="search-form" class="top-search__form" action="" method="post" name="search-form">
+          <div class="fields-group">
+            <input id="top-search-input" class="top-search__input  top-search__input--close" type="search" name="search" value="" placeholder="Пошук">
+            <button class="top-search__submit" type="submit" name="submit-search"></button>
+          </div>
+        </form>
+      </div>
+      <button id="main-nav-toggler" class="burger" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="false" aria-controls="main-nav"><span></span></button>
+    </div>
+
+  </div>
 </header>

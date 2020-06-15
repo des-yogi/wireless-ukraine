@@ -51,7 +51,8 @@
     "contact-block": [],
     "usefull-links": [],
     "copyrights": [],
-    "socials": []
+    "socials": [],
+    "publishedon": []
   },
   "addCssBefore": [
     "./src/scss/variables.scss",
@@ -75,7 +76,8 @@
     "./node_modules/metismenu/dist/metisMenu.js",
     "./src/js/libs/popper.min.js",
     "./src/js/libs/util.js",
-    "./src/js/libs/collapse.js"
+    "./src/js/libs/collapse.js",
+    "./src/js/libs/jquery.sticky.js"
   ],
   "addJsAfter": [
     "./src/js/global-script.js"

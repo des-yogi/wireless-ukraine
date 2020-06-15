@@ -8,10 +8,10 @@ const browserSync = require('browser-sync').create();
 const realFavicon = require ('gulp-real-favicon');
 
 const postcss = require('gulp-postcss');
+const removeComments = require('postcss-discard-comments');
 const autoprefixer = require("autoprefixer");
 const mqpacker = require("css-mqpacker");
 const atImport = require("postcss-import");
-//const cleanss = require('gulp-cleancss'); Тестирование csso
 const csso = require('gulp-csso');
 const inlineSVG = require('postcss-inline-svg');
 const objectFitImages = require('postcss-object-fit-images');
@@ -60,6 +60,10 @@ let postCssPlugins = [
   objectFitImages(),
 ];
 
+let discardComments = [
+  removeComments(),
+]
+
 // Очистка папки сборки
 gulp.task('clean', function () {
   console.log('---------- Очистка папки сборки');
@@ -90,6 +94,9 @@ gulp.task('style', function () {
     .pipe(debug({title: "Style:"}))
     .pipe(sass())
     .pipe(postcss(postCssPlugins))
+    .pipe(gulpIf(isDev,
+      postcss(discardComments)
+    ))
     .pipe(gulpIf(!isDev,
       csso({
         restructure: false,

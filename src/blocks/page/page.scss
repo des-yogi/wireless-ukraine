@@ -46,7 +46,7 @@ body {
   // Типографика проекта — в блоке typo
   display: flex;           // Исправляем баг в IE для min-height and flexbox (flex-direction:column)
   flex-direction: column;  // и прижимаем footer в IE 10-11
-  background-color: #fff;
+  background-color: $body-bg;
   margin: 0;
   min-height: 100%;
 }
@@ -132,12 +132,13 @@ img {
 }
 
 a {
+  text-decoration: none;
   color: $link-color;
-  background-color: transparent;
   transition: color 0.3s;
 
   &:hover,
   &:focus {
+    text-decoration: underline;
     color: $link-color--hover;
   }
 
@@ -158,27 +159,6 @@ a {
 }
 
 // BS4 Хелперы для BS4 табов и т.п.
-/* .fade {
-  transition: opacity 0.15s linear;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .fade {
-    transition: none;
-  }
-}
-
-.fade:not(.show) {
-  opacity: 0;
-}
-
-.collapse {
-  transition: all 0.3s ease-out;
-}
-
-.collapse:not(.show) {
-  display: none;
-} */
 
 .fade {
   @include transition($transition-fade);
@@ -191,6 +171,16 @@ a {
 .collapse {
   &:not(.show) {
     display: none;
+  }
+}
+
+.collapse-main-nav {
+  &:not(.show) {
+    display: none;
+
+    @media (min-width: $menu-desktop-width) {
+      display: block;
+    }
   }
 }
 
@@ -254,12 +244,12 @@ a {
   background: none;
 
   @media (min-width: $screen-md) {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   @media (min-width: $screen-xl) {
-    $padding-min: 15px; // нужный отступ от краев экрана
+    $padding-min: 25px; // нужный отступ от краев экрана
     $half-screen-xl: $screen-xl / 2 - $padding-min;
     // padding: 1em calc(50% - 600px); //600px - это $screen-xl / 2 - нужный отступ от края экрана
     padding-left: calc(50% - #{$half-screen-xl});
@@ -287,10 +277,15 @@ a {
   @include col(lg, 3, $grid-columns, 16px);  // LG (992 по умолчанию) — 3 из 12, промежутки 16px
   @include col(xl, 2, $grid-columns, 20px);  // XL (1200 по умолчанию) — 2 из 12, промежутки 20px
   @include col(xxl, 1, $grid-columns, 26px); // XXL (1800 по умолчанию) — 1 из 12, промежутки 26px
-} */
+}
+
+@include col(xs, 12, 20px);
+@include col(md, 12);
+
+*/
 
 
-// background: svg-load('../blocks/phones-modal/bg-img/phone.svg', fill=$main-color, stroke=rgba(255, 255, 255, 0));
+// background: svg-load('../blocks/phones-modal/bg-img/phone.svg', fill=$main-color, stroke=rgba(255, 255, 255, 0)));
 
 .col-test {
   @include col(xs, 4, 4, 0);
