@@ -279,7 +279,7 @@ a {
   @include col(xxl, 1, $grid-columns, 26px); // XXL (1800 по умолчанию) — 1 из 12, промежутки 26px
 }
 
-@include col(xs, 12, 20px);
+@include col(xs, 12, $grid-columns, 20px);
 @include col(md, 12);
 
 */
@@ -295,4 +295,175 @@ a {
     @include col(xs, 4, 4, 20px);
     @include col(md, 2, 6, 20px);
   }
+}
+
+// Шаблонные сетки, не привязанные к контенту (Начало)
+
+.grid-index {
+  margin-bottom: 48px;
+
+  @media (min-width: $screen-md) {
+    margin-bottom: 64px;
+  }
+
+  &__col-main {
+    @include col(xs, 12, $grid-columns, 20px);
+    @include col(md, 12);
+    @include col(xl, 8);
+    margin-bottom: 48px;
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 64px;
+    }
+
+    @media (min-width: $screen-xl) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__col-aside {
+    @include col(xs, 12, $grid-columns, 20px);
+    @include col(md, 12);
+    @include col(xl, 4);
+  }
+}
+
+.aside-index {
+
+  &__col {
+    @include col(xs, 12, $grid-columns, 20px);
+    @include col(md, 6);
+    @include col(xl, 12);
+
+    & + & {
+      margin-top: 16px;
+
+      @media (min-width: $screen-md) {
+        margin-top: 0;
+      }
+
+      @media (min-width: $screen-xl) {
+        margin-top: 32px;
+      }
+    }
+  }
+}
+
+.link-wrapper {
+  margin-top: 24px;
+
+  @media (min-width: $screen-xl) {
+    margin-top: 32px;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  &__col {
+    @include col(xs, 12, $grid-columns, 20px);
+    @include col-offset(md, 2);
+    @include col(md, 8);
+    @include col-offset(xl, 1, 8);
+    @include col(xl, 6, 8);
+  }
+}
+
+// Шаблонные сетки, не привязанные к контенту (Конец)
+
+.title-line {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0;
+
+  &::after {
+    display: block;
+    content: "";
+    flex: 1 1 auto;
+    width: auto;
+    height: 2px;
+    background-color: $main-color;
+    margin-left: 24px;
+
+    @media (min-width: $screen-md) {
+      margin-left: 32px;
+    }
+  }
+}
+
+.publishedon {
+  display: inline-block;
+  vertical-align: baseline;
+  color: $text-muted;
+}
+
+.facebook-widget {
+  max-width: 100%;
+  min-height: 200px;
+  color: $white;
+  background-color: $body-bg;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);
+
+  a {
+    display: inline-block;
+    vertical-align: top;
+    padding: 24px;
+    color: $color-fb;
+  }
+}
+
+// Swiper
+
+.slider-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+
+  @media (min-width: $screen-md) {
+    margin-top: 18px;
+  }
+
+  @media (min-width: $screen-xl) {
+    position: absolute;
+    bottom: 38px;
+    left: 0;
+    right: 0;
+    padding-left: 32px;
+    padding-right: 32px;
+    margin: 0;
+  }
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  position: static;
+  width: 48px;
+  height: 48px;
+  background-color: $white;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 12px 14px;
+  background-image: svg-load('../blocks/sprite-svg/svg/right-slider-arrow.svg', fill=$main-color);
+
+  &::after {
+    display: none;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $main-color;
+    background-image: svg-load('../blocks/sprite-svg/svg/right-slider-arrow.svg', fill=$white);
+  }
+
+  &.swiper-button-disabled {
+    opacity: 1;
+    background-image: svg-load('../blocks/sprite-svg/svg/right-slider-arrow.svg', fill=$text-muted);
+  }
+}
+
+.swiper-button-prev {
+  transform: scale(-1, 1);
 }

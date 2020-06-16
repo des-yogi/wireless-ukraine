@@ -1,9 +1,60 @@
-// В этом файле должны быть стили для БЭМ-блока archive, его элементов, 
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
 .archive {
 
   $block-name:                &; // #{$block-name}__element
 
+  &__inner {
+    background: linear-gradient(360deg, #1D8197 0%, #064452 100%);
+  }
+
+  &__bg {
+    padding-top: 48px;
+    padding-bottom: 48px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center top;
+    background-image: url(../img/node-links.svg);
+
+    @media (min-width: $screen-md) {
+      background-size: 350px;
+      background-position: left 65px top;
+    }
+
+    @media (min-width: $screen-xl) {
+      position: relative;
+      padding-top: 64px;
+      padding-bottom: 32px;
+      padding-left: 105px;
+      padding-right: 105px;
+      background-size: 465px;
+      background-position: left 65px top;
+    }
+  }
+
+  &__header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    color: $white;
+  }
+
+  &__title {
+    flex: 1 0 auto;
+    margin-top: 0;
+    margin-right: 16px;
+    color: inherit;
+  }
+
+  &__link {
+    flex: 0 0 auto;
+    padding: 5px 0;
+    font-size: $font-size-sm;
+    color: inherit;
+    user-select: none;
+
+    &:hover,
+    &:focus {
+      color: inherit;
+    }
+  }
 }

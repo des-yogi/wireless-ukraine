@@ -1,9 +1,93 @@
-// В этом файле должны быть стили для БЭМ-блока hero, его элементов, 
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
 .hero {
+  padding-top: 32px;
+  padding-bottom: 40px;
+  margin-bottom: 32px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center top;
+  background-image:
+      url(../img/node-links.svg),
+      linear-gradient(180deg, #262626 0%, #1D8197 100%);
+
+  @media (min-width: $screen-md) {
+    padding-top: 48px;
+    padding-bottom: 48px;
+    margin-bottom: 48px;
+  }
+
+  @media (min-width: $screen-xl) {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 64px;
+    background-size: contain;
+    background-position: center top;
+    background-image:
+      linear-gradient(to right, $main-color, $main-color calc(50% - 12.5px), $body-bg calc(50% - 12.5px));
+  }
 
   $block-name:                &; // #{$block-name}__element
 
+  &__text-col {
+    @include col(xs, 12, $grid-columns, 20px);
+    @include col-offset(md, 2);
+    @include col(md, 8);
+    @include col-offset(xl, 0);
+    @include col(xl, 6);
+    margin-bottom: 40px;
+
+    @media (min-width: $screen-xl) {
+      padding-top: 64px;
+      padding-bottom: 64px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__logo-col {
+    @include col(xs, 12, $grid-columns, 20px);
+    @include col-offset(md, 2);
+    @include col(md, 8);
+    @include col-offset(xl, 0);
+    @include col(xl, 6);
+
+    @media (min-width: $screen-xl) {
+      padding-top: 64px;
+      padding-bottom: 64px;
+      background-repeat: no-repeat;
+      background-size: 465px;
+      background-position: right 10px top;
+      background-image: url(../img/node-links.svg);
+    }
+  }
+
+  &__text {
+    color: $white;
+
+    @media (min-width: $screen-xl) {
+      padding-right: 32px;
+    }
+  }
+
+  &__title {
+    color: inherit;
+  }
+
+  &__logo {
+
+    @media (min-width: $screen-xl) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+
+      @media (min-width: $screen-xl) {
+        width: 532px;
+        height: 199px;
+      }
+    }
+  }
 }

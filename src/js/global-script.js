@@ -60,3 +60,11 @@ $( document ).ready(function() {
     //$(this).css({"background-color":"transparent", "box-shadow":"none"});
   });
 });
+
+(function(){
+  var bLazy = new Blazy({
+    selector: '.b-lazy'
+  });
+}());
+
+
