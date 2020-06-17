@@ -1,9 +1,76 @@
-// В этом файле должны быть стили для БЭМ-блока aside-nav, его элементов, 
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
 .aside-nav {
+  padding: 24px 0;
+  color: $white;
+  background-color: $main-color;
 
   $block-name:                &; // #{$block-name}__element
 
+  &__title {
+    padding: 0 32px;
+    margin-top: 0;
+    color: inherit;
+  }
+
+  &__list {
+
+    @media (min-width: $screen-md) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    @media (min-width: $screen-xl) {
+      display: block;
+    }
+  }
+
+  &__item {
+
+    @media (min-width: $screen-md) {
+      width: 50%;
+    }
+
+    @media (min-width: $screen-xl) {
+      width: 100%;
+    }
+
+    &:last-child {
+
+      @media (min-width: $screen-md) and (max-width: 1279px) {
+        flex: 1 1 auto;
+      }
+    }
+  }
+
+  &__link {
+    display: block;
+    position: relative;
+    //height: 100%;
+    padding: 15px 50px 15px 32px;
+    color: inherit;
+    transition: all 0.25s ease-out;
+
+    &::after {
+      display: block;
+      content: "";
+      position: absolute;
+      right: 22px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 24px;
+      height: 24px;
+      background-color: transparent;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 6px 11px;
+      background-image: svg-load('../blocks/aside-nav/bg-img/right-arrow.svg', fill=$white);
+    }
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      color: inherit;
+      background-color: $link-color--hover;
+    }
+  }
 }
