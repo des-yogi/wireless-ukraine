@@ -34,32 +34,33 @@ if(~navigator.appVersion.indexOf("Linux"))cth('linux');
 // });
 
 (function(){
-  // code
-/*  const name = 'Doode';
-  let str = `
-  Здравствуйте ${name}.
-  Мы в ${new Date().getFullYear()} году
-  `;
-  let caption = document.querySelector('h1');
-  console.log(str);
+  // Добавление/удаление модификаторов при клике на переключение видимости
+  var toggler = document.getElementById('main-nav-toggler');
+  if(toggler){
+    toggler.addEventListener('click', mainNavVisibleToggle);
 
-  const newCaption = 'ES6 работает';
-  let anyFn = (elem) => {
-    elem.innerText = `Новый заголовок: ${name}, ${newCaption}`;
-  };
-  anyFn(caption);
-*/
-  // for ...of
-/*const array = ['a', 'b', 'c', 'd'];
-for (const element of array) {
-    console.log(element);
-}
+    function mainNavVisibleToggle(e) {
+      e.preventDefault();
+      toggler.classList.toggle('burger--close'); // модификатор иконки (должен быть .burger)
+      //document.getElementById('main-nav').classList.toggle('collapse');
+    }
+  }
+}());
 
-function printf(format, ...params) {
-  console.log('params: ', params);
-  console.log('format: ', format);
-}
+$( document ).ready(function() {
+  $("#sticker").sticky({topSpacing:0});
 
-printf('%s %d %.2f', 'adrian', 321, Math.PI);
-*/
+  $('#sticker').on('sticky-start', function() {
+      //console.log("Started");
+  });
+
+  $('#sticker').on('sticky-end', function() {
+    //console.log("Ended");
+  });
+});
+
+(function(){
+  var bLazy = new Blazy({
+    selector: '.b-lazy'
+  });
 }());

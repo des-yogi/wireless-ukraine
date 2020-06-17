@@ -3,20 +3,15 @@ $title-color:         #090909 !default;
 $link-color--hover:   #3e671e !default;
 
 .topbar-nav {
-  display: none;
-  position: relative;
-  //width: 100%;
-  //margin-top: 15px;
-  //background: $background-color;
+  position: absolute;
+  z-index: 0;
+  top: 100%;
+  left: 0;
+  right: 0;
 
-  @media (min-width: $menu-desktop-width) {
-    display: block;
-    margin-left: 42px;
-  }
-
-  @media (min-width: $screen-xxl) {
-    margin-left: 64px;
-  }
+  max-height: calc(100vh - 42px);
+  overflow-y: auto;
+  box-shadow: $shadow;
 }
 
 .topbar-nav ul {
@@ -24,7 +19,7 @@ $link-color--hover:   #3e671e !default;
   padding: 0;
   margin: 0;
   list-style: none;
-  background: transparent;
+  background-color: transparent;
 
   li + li {
     margin-top: 0;
@@ -32,60 +27,43 @@ $link-color--hover:   #3e671e !default;
 }
 
 .topbar-nav .metismenu {
-  //display: -webkit-box;
-  //display: -ms-flexbox;
   display: flex;
-  //-webkit-box-orient: vertical;
-  //-webkit-box-direction: normal;
-  //-ms-flex-direction: column;
-  //flex-direction: column;
+  flex-direction: column;
+  background-color: $white;
+
+  //box-shadow: 0 50vh 0 50vh rgba(0, 0, 0, 0.5), inset 0 2px 4px rgba(0, 0, 0, 0.25);
 }
 
-.topbar-nav .metismenu > li {
-  //-webkit-box-flex: 1;
-  //-ms-flex: 1 1 0%;
-  flex: 1 1 0%;
-  //display: -webkit-box;
-  //display: -ms-flexbox;
+.topbar-nav .metismenu li {
+  flex: 1 1 100%;
   display: flex;
-  //-webkit-box-orient: vertical;
-  //-webkit-box-direction: normal;
-  //-ms-flex-direction: column;
   flex-direction: column;
   position: relative;
-  //border-bottom: 1px solid $border-color;
-  margin-right: 14px;
 
-  &:last-child {
-    margin-right: 0;
+  &.active > a:not(.has-arrow) {
+    color: $white;
+    text-decoration: none;
+    background: $link-color--hover;
+  }
+
+  &.active > a {
+
+    &.has-arrow {
+      color: $white;
+      text-decoration: none;
+      background: $link-color--hover;
+
+      &::after {
+        background-image: svg-load('../blocks/metismenu/bg-img/down-arrow.svg', fill=$white);
+      }
+    }
   }
 
   &.mm-active a {
 
     &::after {
-    transform: translateY(-50%) rotate(-180deg);
-      //background-image: svg-load('../blocks/metismenu/bg-img/arrow-bottom.svg', fill=$white);
+      transform: translateY(-50%) rotate(-180deg);
     }
-  }
-
-  &.active a {
-    pointer-events: none;
-
-    &::before {
-      display: block;
-      content: "";
-      position: absolute;
-      bottom: -16px;
-      left: 0;
-      right: 0;
-      width: 100%;
-      height: 4px;
-      background-color: $white;
-    }
-  }
-
-  &.active > ul > li:not(.active) a {
-    pointer-events: auto;
   }
 }
 
@@ -94,105 +72,125 @@ $link-color--hover:   #3e671e !default;
   display: flex;
   align-items: center;
   height: 100%;
-  padding: 3px 5px 3px 5px;
-  font-size: 13px;
-  font-weight: 600;
+  padding: 16px 32px;
+  font-size: 14px;
+  font-weight: 500;
   text-decoration: none;
-  text-align: right;
   white-space: nowrap;
-  color: $white;
+  color: $text-color;
   outline-width: 0;
-  transition: all .2s ease-out;
+  transition: all 0.2s ease-out;
   user-select: none;
 
-  @media (min-width: $screen-xl) {
-    //padding: 3px 18px 3px 18px;
-    font-size: 15px;
-    text-align: left;
-  }
-
-  @media (min-width: $screen-xxl) {
-    font-size: 16px;
-  }
-
   &.has-arrow {
-    padding: 3px 18px 3px 5px;
+    padding-right: 50px;
+
+    @media (min-width: $menu-desktop-width) {
+      padding-right: 36px;
+    }
 
     &::after {
       position: absolute;
       top: 50%;
-      right: 2px;
+      right: 32px;
       content: "";
-      width: 6px;
-      height: 3.5px;
+      width: 11px;
+      height: 6px;
       background-color: transparent;
       background-repeat: no-repeat;
-      background-size: 6px 3.5px;
+      background-size: 11px 6px;
       background-position: center;
-      background-image: svg-load('../blocks/metismenu/bg-img/arrow-bottom.svg', fill=$white);
+      background-image: svg-load('../blocks/metismenu/bg-img/down-arrow.svg', fill=$main-color);
       transform-origin: center;
       transform: translateY(-50%);
-      transition: all .2s ease-out;
+      transition: all 0.2s ease-out;
       border: none;
-      //border-style: solid;
-      //border-width: 1px 0 0 1px;
-      //border-color: initial;
-    }
 
-    &:hover,
-    &:focus {
-
-      &::before {
-        background-color: $main-color;
+      @media (min-width: $menu-desktop-width) {
+        right: 14px;
+        background-image: svg-load('../blocks/metismenu/bg-img/down-arrow.svg', fill=$white);
       }
     }
   }
 }
-
 
 .topbar-nav .metismenu a:hover,
 .topbar-nav .metismenu a:focus,
 .topbar-nav .metismenu a:active {
   color: $white;
   text-decoration: none;
-  //background: $link-color--hover;
+  background-color: $link-color;
+
 
   &::after {
     transform: translateY(-50%);
-    background-image: svg-load('../blocks/metismenu/bg-img/arrow-bottom.svg', fill=$white);
-  }
-
-  &::before {
-    display: block;
-    content: "";
-    position: absolute;
-    bottom: -16px;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 4px;
-    background-color: $white;
+    background-image: svg-load('../blocks/metismenu/bg-img/down-arrow.svg', fill=$white);
   }
 }
 
 
+
+
 @media (min-width: $menu-desktop-width) {
 
+  .topbar-nav  {
+    position: static;
+    margin-left: 48px;
+
+    max-height: none;
+    overflow-y: visible;
+    box-shadow: none;
+  }
+
   .topbar-nav .metismenu {
-    //-webkit-box-orient: horizontal;
-    //-webkit-box-direction: normal;
-    //-ms-flex-direction: row;
     flex-direction: row;
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  .topbar-nav .metismenu a {
+    padding: 12px 16px;
+    color: $white;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $white;
+      background-color: $link-color--hover;
+    }
   }
 
   .topbar-nav .metismenu > li {
-    //-webkit-box-orient: vertical;
-    //-webkit-box-direction: normal;
-    //-ms-flex-direction: column;
     flex-direction: column;
     flex: 0 1 auto;
     border-bottom: none;
-    //border-right: 2px solid $border-color;
+
+    &.active {
+
+      & > a {
+        background-color: $link-color--hover;
+      }
+
+      & > ul {
+
+        li.active > a {
+          color: $white;
+          background-color: $link-color--hover;
+        }
+
+        a {
+          color: $text-color;
+          background-color: $white;
+
+          &:hover,
+          &:focus,
+          &:active {
+            color: $white;
+            background-color: $link-color--hover;
+          }
+        }
+      }
+    }
   }
 
   .topbar-nav .metismenu > li > ul {
@@ -200,19 +198,24 @@ $link-color--hover:   #3e671e !default;
     top: 100%;
     min-width: 100%;
     z-index: 91;
-    padding-top: 16px;
+    background-color: $white;
+
+    a {
+      color: $text-color;
+    }
   }
 
   .topbar-nav.is-hoverable .metismenu > li > ul {
     height: auto !important;
   }
 
+  .topbar-nav .metismenu > li > ul.mm-show,
   .topbar-nav.is-hoverable .metismenu > li:hover > ul {
-    display: block;
+     display: flex !important;
+     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
   }
 
   .topbar-nav.is-hoverable .metismenu > li:hover > a.has-arrow::after {
-    //-webkit-transform: rotate(-135deg);
     transform: translateY(-50%) rotate(-180deg);
   }
 }
@@ -221,54 +224,4 @@ $link-color--hover:   #3e671e !default;
 .metismenu {
 
   $block-name:                &; // #{$block-name}__element
-
-  &__submenu {
-    border-bottom-right-radius: $border-radius;
-    border-bottom-left-radius: $border-radius;
-    overflow: hidden;
-
-    li {
-      background-color: $white;
-
-      &.active {
-
-        .metismenu__link {
-          color: $secondary-color !important;
-          pointer-events: none;
-        }
-      }
-    }
-
-    // li:first-child {
-    //   position: relative;
-    //   padding-top: 8px;
-
-    //   &::before {
-    //     display: block;
-    //     content: "";
-    //     position: absolute;
-    //     z-index: 1;
-    //     top: 0;
-    //     left: 0;
-    //     right: 0;
-    //     height: 4px;
-    //     background-color: $main-color;
-    //   }
-    // }
-
-    li:last-child {
-      padding-bottom: 8px;
-    }
-
-    #{$block-name}__link {
-      padding: 8px 16px !important;
-      color: $text-color !important;
-      background-color: $white;
-
-      &:hover,
-      &:focus {
-        color: $secondary-color !important;
-      }
-    }
-  }
 }

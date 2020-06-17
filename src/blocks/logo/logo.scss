@@ -1,11 +1,34 @@
-// В этом файле должны быть стили для БЭМ-блока logo, его элементов,
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
 .logo {
 
   $block-name:                &; // #{$block-name}__element
 
-  display: block;
+  display: inline-block;
+  vertical-align: top;
   white-space: nowrap;
+  color: $white;
+
+  &:hover,
+  &:focus {
+    color: $white;
+  }
+
+  svg {
+    display: block;
+    width: 95px;
+    height: 22px;
+    fill: currentColor;
+  }
+
+  &--footer {
+
+    svg {
+      width: 104px;
+      height: 24px;
+
+      @media (min-width: $screen-xl) {
+        width: 264px;
+        height: 61px;
+      }
+    }
+  }
 }

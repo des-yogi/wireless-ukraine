@@ -1,9 +1,63 @@
-// В этом файле должны быть стили для БЭМ-блока socials, его элементов, 
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
 .socials {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 
   $block-name:                &; // #{$block-name}__element
 
+  &__title {
+    margin-top: 0;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  &__item {
+    margin-left: 15px;
+  }
+
+  &__link {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-color: $white;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+    &--fb {
+      background-size: 20px;
+      background-image: svg-load('../blocks/socials/bg-img/facebook-icon.svg', fill=$link-color);
+
+      &:hover,
+      &:focus {
+        background-image: svg-load('../blocks/socials/bg-img/facebook-icon.svg', fill=$link-color--hover);
+      }
+
+    }
+
+    &--in {
+      background-size: 20px;
+      background-image: svg-load('../blocks/socials/bg-img/linkedin-icon.svg', fill=$link-color);
+
+      &:hover,
+      &:focus {
+        background-image: svg-load('../blocks/socials/bg-img/linkedin-icon.svg', fill=$link-color--hover);
+      }
+    }
+
+    &--tw {
+      background-size: 20px 16px;
+      background-image: svg-load('../blocks/socials/bg-img/twitter-icon.svg', fill=$link-color);
+
+      &:hover,
+      &:focus {
+        background-image: svg-load('../blocks/socials/bg-img/twitter-icon.svg', fill=$link-color--hover);
+      }
+    }
+
+  }
 }

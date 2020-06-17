@@ -1,9 +1,33 @@
-// В этом файле должны быть стили для БЭМ-блока magazine-slider, его элементов, 
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
 .magazine-slider {
+  display: block;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);
 
   $block-name:                &; // #{$block-name}__element
 
+  &:hover,
+  &:focus {
+    text-decoration: none;
+
+    #{$block-name}__caption {
+      color: $white;
+      background-color: $main-color;
+    }
+  }
+
+  &__container {
+    padding-bottom: 6px;
+  }
+
+  &__caption {
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    color: $title-color;
+    background-color: $white;
+
+    @media (min-width: $screen-xl) {
+      padding: 12px 20px;
+    }
+  }
 }

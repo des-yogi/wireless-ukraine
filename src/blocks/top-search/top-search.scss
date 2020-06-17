@@ -1,9 +1,106 @@
-// В этом файле должны быть стили для БЭМ-блока top-search, его элементов, 
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
 .top-search {
+  flex: 1 1 auto;
 
   $block-name:                &; // #{$block-name}__element
 
+  .fields-group {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__form {
+
+  }
+
+  &__input {
+    position: relative;
+    display: block;
+    width: 42px;
+    height: 42px;
+    padding: 13px 16px;
+    text-align: left;
+    color: transparent;
+    background-color: $secondary-color;
+    background-repeat: no-repeat;
+    background-position: right 13px center;
+    background-size: 16px 16px;
+    background-image: svg-load('../blocks/top-search/bg-img/lens-icon.svg', fill=$white);
+    border: none;
+    user-select: none;
+    //cursor: pointer;
+    outline: none;
+    pointer-events: auto;
+    transition: width 0.3s ease-in-out;
+
+    @media (min-width: $screen-md) {
+      width: 296px;
+    }
+
+    @media (min-width: $screen-xl) {
+      width: 350px;
+      background-image: none;
+    }
+
+    &::placeholder {
+      color: transparent;
+
+      @media (min-width: $screen-xl) {
+        color: $white;
+      }
+    }
+
+    &:focus {
+      width: 100%;
+      padding-right: 36px;
+      color: $text-color;
+      background-color: $white;
+      background-image: svg-load('../blocks/top-search/bg-img/lens-icon.svg', fill=$main-color);
+
+      @media (min-width: $screen-md) {
+        width: 296px;
+      }
+
+      @media (min-width: $screen-xl) {
+        width: 350px;
+        padding-right: 12px;
+        background-image: none;
+      }
+
+      &::placeholder {
+        color: $text-muted;
+      }
+    }
+  }
+
+  &__submit {
+    display: none;
+
+    @media (min-width: $screen-xl) {
+      display: block;
+      width: 42px;
+      height: 42px;
+      padding: 13px 9px;
+      text-align: left;
+      color: transparent;
+      background-color: $secondary-color;
+      background-repeat: no-repeat;
+      background-position: right 13px center;
+      background-size: 16px 16px;
+      background-image: svg-load('../blocks/top-search/bg-img/lens-icon.svg', fill=$white);
+      border: none;
+      user-select: none;
+      cursor: pointer;
+      outline: none;
+      pointer-events: auto;
+      transition: all 0.2s ease-in-out;
+
+      &:hover,
+      &:focus,
+      &:active {
+        color: $main-color;
+        background-color: $white;
+        background-image: svg-load('../blocks/top-search/bg-img/lens-icon.svg', fill=$main-color);
+      }
+    }
+  }
 }
