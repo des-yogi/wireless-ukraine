@@ -18,4 +18,17 @@
     height: 22px;
     fill: currentColor;
   }
+
+  &--footer {
+
+    svg {
+      width: 104px;
+      height: 24px;
+
+      @media (min-width: $screen-xl) {
+        width: 264px;
+        height: 61px;
+      }
+    }
+  }
 }

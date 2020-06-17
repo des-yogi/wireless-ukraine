@@ -1,8 +1,137 @@
-// В этом файле должны быть стили для БЭМ-блока page-footer, его элементов,
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
 .page-footer {
+  overflow: hidden;
+
+  @media (min-width: $screen-xl) {
+    background:
+      linear-gradient(to left, $white, $white 50%, $main-color 50%);
+  }
 
   $block-name:                &; // #{$block-name}__element
+
+  &__logo-col {
+    @include col(xs, 12, $grid-columns, 20px);
+    @include col(md, 12);
+    @include col(xl, 3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    background: $main-color;
+
+    @media screen and (min-width: $screen-md) and (max-width: 1279px) {
+      position: relative;
+
+      &::before,
+      &::after {
+        display: block;
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        background-color: $main-color;
+      }
+
+      &::before {
+        left: -20px;
+        width: 22px;
+      }
+
+      &::after {
+        right: -20px;
+        width: 22px;
+      }
+    }
+
+    @media (min-width: $screen-xl) {
+      justify-content: initial;
+      background: linear-gradient(to left, $white, $white 12.5px, $main-color 12.5px);
+    }
+  }
+
+  &__text-col {
+    @include col(xs, 12, $grid-columns, 20px);
+    @include col(md, 12);
+    @include col(xl, 9);
+    padding-top: 24px;
+
+    @media (min-width: $screen-md) {
+      padding-top: 32px;
+    }
+
+    @media (min-width: $screen-xl) {
+      background-color: $white;
+    }
+  }
+
+  &__menu-col {
+    @include col(xs, 12, $grid-columns, 20px);
+    //@include col(md, 6);
+    @include col(md, 7);
+    @include col(xl, 8);
+  }
+
+  &__contacts-col {
+    @include col(xs, 12, $grid-columns, 20px);
+    //@include col-offset(md, 1);
+    @include col(md, 5);
+    @include col(xl, 4);
+    margin-top: calc(24px - 16px); // 16px margin-bottom от списка сверху
+
+    @media (min-width: $screen-md) {
+      margin-top: 0;
+    }
+  }
+
+  &__copyrights-col {
+    @include col(xs, 12, $grid-columns, 20px);
+    @include col(md, 12);
+    @include col(xl, 12);
+  }
+
+  &__block {
+
+  }
+
+  &__block-title {
+    margin-top: 0;
+  }
+
+  &__menu-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+
+    &--contacts {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__menu-item {
+    flex: 1 1 50%;
+    margin-bottom: 16px;
+
+    &:nth-child(odd) {
+      padding-right: 20px;
+    }
+
+    &--contacts {
+      flex: 1 0 auto;
+      width: 100%;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &:nth-child(odd) {
+        padding-right: 0;
+      }
+    }
+  }
+
+  &__menu-link {
+    display: inline-block;
+    vertical-align: top;
+  }
 }

@@ -11,6 +11,7 @@ $link-color--hover:   #3e671e !default;
 
   max-height: calc(100vh - 42px);
   overflow-y: auto;
+  box-shadow: $shadow;
 }
 
 .topbar-nav ul {
@@ -29,7 +30,8 @@ $link-color--hover:   #3e671e !default;
   display: flex;
   flex-direction: column;
   background-color: $white;
-  //box-shadow: 0 50vh 0 50vh rgba(0, 0, 0, 0.25), inset 0 2px 4px rgba(0, 0, 0, 0.25);
+
+  //box-shadow: 0 50vh 0 50vh rgba(0, 0, 0, 0.5), inset 0 2px 4px rgba(0, 0, 0, 0.25);
 }
 
 .topbar-nav .metismenu li {
@@ -137,6 +139,7 @@ $link-color--hover:   #3e671e !default;
 
     max-height: none;
     overflow-y: visible;
+    box-shadow: none;
   }
 
   .topbar-nav .metismenu {

@@ -4,33 +4,79 @@
 
   &__inner {
     background: linear-gradient(360deg, #1D8197 0%, #064452 100%);
+
+    &:nth-child(2) {
+      background: linear-gradient(180deg, #1D8197 0%, #064452 100%);
+
+      .slider-controls {
+        bottom: 70px;
+      }
+
+      #{$block-name}__bg {
+        padding-bottom: 48px;
+
+        @media (min-width: $screen-xl) {
+          padding-bottom: 64px;
+        }
+
+        &::after {
+          background-position: center top;
+          transform: scale(1, -1);
+
+          @media (min-width: $screen-md) {
+            background-position: right 65px top;
+          }
+        }
+      }
+    }
   }
 
   &__bg {
+    position: relative;
+    overflow: hidden;
     padding-top: 48px;
-    padding-bottom: 48px;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center top;
-    background-image: url(../img/node-links.svg);
+    //padding-bottom: 35px;
+
+    &::after {
+      display: block;
+      content: "";
+      position: absolute;
+      z-index: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center top;
+      background-image: url(../img/node-links.svg);
+
+      @media (min-width: $screen-md) {
+        background-size: 350px;
+        background-position: left 65px top;
+      }
+
+      @media (min-width: $screen-xl) {
+        background-size: 465px;
+        background-position: left 65px top;
+      }
+    }
 
     @media (min-width: $screen-md) {
-      background-size: 350px;
-      background-position: left 65px top;
+      padding-bottom: 35px;
     }
 
     @media (min-width: $screen-xl) {
-      position: relative;
       padding-top: 64px;
       padding-bottom: 32px;
       padding-left: 105px;
       padding-right: 105px;
-      background-size: 465px;
-      background-position: left 65px top;
     }
   }
 
   &__header {
+    position: relative;
+    z-index: 1;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;

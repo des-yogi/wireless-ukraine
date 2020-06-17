@@ -51,13 +51,11 @@ $( document ).ready(function() {
   $("#sticker").sticky({topSpacing:0});
 
   $('#sticker').on('sticky-start', function() {
-      console.log("Started");
-      //$(this).css({"background-color":"#fff", "box-shadow":"0 0 8px #4f4f4f"});
+      //console.log("Started");
   });
 
   $('#sticker').on('sticky-end', function() {
-    console.log("Ended");
-    //$(this).css({"background-color":"transparent", "box-shadow":"none"});
+    //console.log("Ended");
   });
 });
 
@@ -66,5 +64,3 @@ $( document ).ready(function() {
     selector: '.b-lazy'
   });
 }());
-
-
