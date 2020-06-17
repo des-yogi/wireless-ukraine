@@ -29,6 +29,10 @@
 
   &__content {
     flex-grow: 1;
+
+    &--404 {
+      background-color: $text-color;
+    }
   }
 
   &__footer-wrapper {
@@ -336,7 +340,7 @@ a {
     @include col(xl, 12);
 
     & + & {
-      margin-top: 16px;
+      margin-top: 24px;
 
       @media (min-width: $screen-md) {
         margin-top: 0;

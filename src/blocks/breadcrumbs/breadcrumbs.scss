@@ -2,8 +2,13 @@ $line-height:                 1.375em !default;
 $text-color:                  hsl(0, 0%, 10%) !default;
 
 .breadcrumbs {
-  margin-top: 25px;
-  margin-bottom: 25px;
+  margin-top: 24px;
+  margin-bottom: 32px;
+
+  @media (min-width: $screen-xl) {
+    margin-top: 32px;
+    margin-bottom: 32px;
+  }
 
   $block-name:                &;
   // #{$block-name}__element
@@ -32,7 +37,7 @@ $text-color:                  hsl(0, 0%, 10%) !default;
       content: '|';
       display: inline-block;
       margin-left: 0.8em;
-      font-weight: 700;
+      font-weight: 500;
       color: $text-muted;
     }
 
@@ -40,7 +45,8 @@ $text-color:                  hsl(0, 0%, 10%) !default;
 
       #{$block-name}__link {
         text-decoration: none;
-        color: $main-color;
+        color: $title-color;
+        pointer-events: none;
       }
     }
   }
