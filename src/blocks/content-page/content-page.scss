@@ -1,9 +1,42 @@
-// В этом файле должны быть стили для БЭМ-блока content-page, его элементов, 
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
 .content-page {
 
   $block-name:                &; // #{$block-name}__element
 
+  &__top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 24px;
+    font-size: 14px;
+    font-weight: 500;
+
+    @media (min-width: $screen-xl) {
+      margin-bottom: 32px;
+    }
+
+    span {
+      margin-left: 16px;
+    }
+  }
+
+  &__parent-link {
+
+  }
+
+  &__content {
+
+    img {
+      display: block;
+      width: 100%;
+      max-width: 480px;
+      margin: 24px auto;
+
+      @media (min-width: $screen-xl) {
+        max-width: 600px;
+        margin-top: 32px;
+        margin-bottom: 32px;
+      }
+    }
+  }
 }

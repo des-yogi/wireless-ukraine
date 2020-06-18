@@ -25,6 +25,7 @@
     text-align: center;
     color: $title-color;
     background-color: $white;
+    transition: all 0.2s ease-out;
 
     @media (min-width: $screen-xl) {
       padding: 12px 20px;

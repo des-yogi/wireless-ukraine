@@ -52,7 +52,9 @@
     "usefull-links": [],
     "copyrights": [],
     "socials": [],
-    "publishedon": []
+    "publishedon": [],
+    "issue-archive": [],
+    "other-links": []
   },
   "addCssBefore": [
     "./src/scss/variables.scss",

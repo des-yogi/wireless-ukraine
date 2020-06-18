@@ -1,9 +1,126 @@
-// В этом файле должны быть стили для БЭМ-блока contact-block, его элементов, 
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
 .contact-block {
+
+  @media (min-width: $screen-md) {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
 
   $block-name:                &; // #{$block-name}__element
 
+  .row {
+
+  }
+
+  &__wrapper {
+    padding-top: 24px;
+    background-color: $white;
+
+    @media (min-width: $screen-xs) and (max-width: $screen-md - 1) {
+      padding-left: 10px;
+      padding-right: 10px;
+      margin-left: -10px;
+      margin-right: -10px;
+    }
+  }
+
+  &__main-title {
+
+    @media (min-width: $screen-md) {
+      padding-left: 25px;
+    }
+
+    @media (min-width: $screen-xl) {
+      padding-left: 64px;
+    }
+  }
+
+  &__col-form {
+    @include col(xs, 12, $grid-columns, 20px);
+    @include col(md, 6);
+    @include col(xl, 4);
+    margin-bottom: 48px;
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__col-block {
+    @include col(xs, 12, $grid-columns, 20px);
+    @include col(md, 6);
+    @include col-offset(xl, 1);
+    @include col(xl, 7);
+  }
+
+  &__title {
+    margin-top: 0;
+  }
+
+  &__logo-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 32px;
+    height: 385px;
+    background: linear-gradient(180deg, $text-color, $main-color 100%);
+
+    @media (min-width: $screen-xs) and (max-width: $screen-md - 1) {
+      margin-left: -10px;
+      margin-right: -10px;
+    }
+
+    @media (min-width: $screen-md) {
+      flex: 1 1 auto;
+      padding: 25px;
+    }
+
+    @media (min-width: $screen-xl) {
+      margin-top: 64px;
+      padding: 53px;
+    }
+
+    &::before,
+    &::after {
+      display: block;
+      content: "";
+      position: absolute;
+      width: 227px;
+      height: 158px;
+      background-color: transparent;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-image: url(../img/node-links.svg);
+
+      @media (min-width: $screen-xl) {
+        width: 455px;
+        height: 316px;
+      }
+    }
+
+    &::before {
+      top: 0;
+      right: 0;
+      background-position: right top;
+    }
+
+    &::after {
+      bottom: 0;
+      left: 0;
+      background-position: left bottom;
+      transform: scale(1, -1);
+    }
+
+    img {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 300px;
+
+      @media (min-width: $screen-md) {
+        max-width: none;
+      }
+    }
+  }
 }

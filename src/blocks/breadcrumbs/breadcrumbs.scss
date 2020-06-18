@@ -65,4 +65,25 @@ $text-color:                  hsl(0, 0%, 10%) !default;
       //text-decoration: none;
     }
   }
+
+  &--ondark {
+
+    #{$block-name}__link {
+
+      &:hover,
+      &:focus {
+        color: $white;
+      }
+    }
+
+    #{$block-name}__item {
+
+      &:last-child {
+
+        #{$block-name}__link {
+          color: $white;
+        }
+      }
+    }
+  }
 }
