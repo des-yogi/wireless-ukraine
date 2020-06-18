@@ -145,7 +145,6 @@ p,
 ul,
 ol,
 dl,
-blockquote,
 pre,
 address,
 figure {
@@ -209,9 +208,53 @@ abbr[title] {
 }
 
 blockquote {
-  padding: 0;
-  margin-left: 0;
-  margin-right: 0;
+  position: relative;
+  padding-left: 48px;
+  margin: 24px 0;
+  font-weight: 500;
+
+  @media (min-width: $screen-md) {
+    padding-left: 86px;
+  }
+
+  @media (min-width: $screen-xl) {
+    margin: 32px 0;
+    font-size: 20px;
+  }
+
+  &::before {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 32px;
+    height: 22px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 32px 21px;
+    background-image: svg-load('../blocks/sprite-svg/svg/quotes-icon.svg', fill=$main-color);
+
+    @media (min-width: $screen-md) {
+      width: 54px;
+      height: 35px;
+      background-size: 54px 35px;
+    }
+  }
+
+  footer {
+    margin-top: 16px;
+    font-size: 14px;
+
+    @media (min-width: $screen-xl) {
+      margin-top: 24px;
+      font-size: 16px;
+    }
+
+    span {
+      font-weight: 400;
+    }
+  }
 }
 
 dt {

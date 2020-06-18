@@ -1,9 +1,88 @@
-// В этом файле должны быть стили для БЭМ-блока search-result, его элементов, 
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
 .search-result {
 
   $block-name:                &; // #{$block-name}__element
 
+  &__inner {
+    @include col(xs, 12, $grid-columns, 20px);
+    @include col(md, 12);
+
+    background: $white;
+
+    @media (min-width: $screen-md) {
+      background: none;
+    }
+
+    & + & {
+      margin-top: 48px;
+
+      @media (min-width: $screen-xl) {
+        margin-top: 64px;
+      }
+    }
+
+    &--content {
+      @include col-offset(xl, 1);
+      @include col(xl, 10);
+    }
+  }
+
+  &__article {
+    padding-top: 24px;
+    padding-bottom: 32px;
+
+    @media (min-width: $screen-md) {
+      padding-left: 24px;
+      padding-right: 24px;
+      background: $white;
+    }
+
+    @media (min-width: $screen-xl) {
+      padding-left: 105px;
+      padding-right: 105px;
+    }
+  }
+
+  &__query-result {
+    margin-bottom: 24px;
+    font-size: larger;
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 32px;
+    }
+
+    span {
+      font-weight: 700;
+      color: $main-color;
+    }
+  }
+
+  &__item {
+    margin-top: 0;
+    margin-bottom: 24px;
+  }
+
+  &__link {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 0;
+    margin-bottom: 16px;
+
+    &:hover,
+    &:focus {
+      color: $link-color;
+      //text-decoration: underline !important;
+    }
+
+    span {
+      display: inline-block;
+      vertical-align: baseline;
+      margin-left: 0.5em;
+    }
+  }
+
+  &__descr {
+    font-weight: 400;
+    font-size: 16px;
+    color: $text-color;
+  }
 }
