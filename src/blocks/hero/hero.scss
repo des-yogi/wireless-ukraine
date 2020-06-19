@@ -3,7 +3,7 @@
   padding-bottom: 40px;
   margin-bottom: 32px;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: 320px, contain;
   background-position: center top;
   background-image:
       url(../img/node-links.svg),
@@ -13,6 +13,7 @@
     padding-top: 48px;
     padding-bottom: 48px;
     margin-bottom: 48px;
+    background-size: 355px, contain;
   }
 
   @media (min-width: $screen-xl) {

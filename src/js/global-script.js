@@ -64,3 +64,7 @@ $( document ).ready(function() {
     selector: '.b-lazy'
   });
 }());
+
+// $( document ).ready(function() {
+//   var fbWidget = document.querySelector('.fb-page');
+// });

@@ -9,8 +9,8 @@
 
 <body>
 
-<div id="fb-root"></div>
-<script src="https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v7.0" async defer crossorigin="anonymous" nonce="kdO6aFfK"></script>
+<!-- <div id="fb-root"></div>
+<script src="https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v7.0" async defer crossorigin="anonymous" nonce="kdO6aFfK"></script> -->
 
 <noscript>У вас отключен JavaScript. Приносим наши извинения, но это делает затруднительным использование данного сайта.</noscript>
 
@@ -34,8 +34,8 @@
           <div class="hero__logo-col">
             <div class="hero__logo">
               <picture>
-                <source srcset="img/wireless-ukraine-hero-desktop.svg" media="(min-width: 1280px)">
-                <img src="img/wireless-ukraine-hero.svg" alt="Wireless Ukraine logo" width="300" height="70" title="Wireless Ukraine">
+                <source data-srcset="img/wireless-ukraine-hero-desktop.svg" media="(min-width: 1280px)">
+                <img class="b-lazy" data-src="img/wireless-ukraine-hero.svg" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== alt="Wireless Ukraine logo" width="300" height="70" title="Wireless Ukraine">
               </picture>
             </div>
           </div>
@@ -70,8 +70,20 @@
               <article class="news-card">
                 <div class="embed-responsive  embed-responsive--21-9  news-card__img">
                   <picture>
+                    <source data-srcset="img/news-img.webp" media="(min-width: 1280px)" type="image/webp">
+                    <source data-srcset="img/news-img.jpg" media="(min-width: 1280px)">
+                    <!-- 812x348 -->
+                    <source data-srcset="img/news-img.webp" media="(min-width: 992px)" type="image/webp">
+                    <source data-srcset="img/news-img.jpg" media="(min-width: 992px)">
+                    <!-- 1160x497 -->
+                    <source data-srcset="img/news-img.webp" media="(min-width: 768px)" type="image/webp">
+                    <source data-srcset="img/news-img.jpg" media="(min-width: 768px)">
+                    <!-- 952x408 -->
+                    <source data-srcset="img/news-img.webp" media="(min-width: 480px)" type="image/webp">
+                    <source data-srcset="img/news-img.jpg" media="(min-width: 480px)">
+                    <!-- 600x257 -->
                     <source data-srcset="img/news-img.webp" type="image/webp">
-                    <img class="b-lazy" data-src="img/news-img.jpg" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== alt="Иллюстрвция к статье" width="" height="">
+                    <img class="b-lazy" data-src="img/news-img.jpg" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== alt="Иллюстрвция к статье" width="480" height="205">
                   </picture>
                 </div>
                 <div class="news-card__text">
@@ -120,20 +132,32 @@
               <div class="row">
 
                 <div class="aside-index__col">
-                  <div class="facebook-widget" style="">
+                  <!-- <div class="facebook-widget" style="">
                     <div class="fb-page" data-href="https://www.facebook.com/wirelessua.net/" data-tabs="timeline" data-width="500" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/wirelessua.net/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/wirelessua.net/">Wireless Ukraine журнал</a></blockquote>
                     </div>
-                  </div>
+                  </div> -->
                 </div>
 
                 <div class="aside-index__col">
                   <div class="mini-banner__wrapper">
 
-                    <a href="#" class="mini-banner" target="_blank" rel="nofollow noopener">
+                    <a href="#" class="mini-banner" target="_blank" rel="nofollow noopener" title="Баннер">
                       <div class="embed-responsive  embed-responsive--21-9  mini-banner__img">
                         <picture>
+                          <source data-srcset="img/banner-mini.webp" media="(min-width: 1280px)" type="image/webp">
+                          <source data-srcset="img/banner-mini.jpg" media="(min-width: 1280px)">
+                          <!-- 393x169 -->
+                          <source data-srcset="img/banner-mini.webp" media="(min-width: 992px)" type="image/webp">
+                          <source data-srcset="img/banner-mini.jpg" media="(min-width: 992px)">
+                          <!-- 580x249 -->
+                          <source data-srcset="img/banner-mini.webp" media="(min-width: 768px)" type="image/webp">
+                          <source data-srcset="img/banner-mini.jpg" media="(min-width: 768px)">
+                          <!-- 464x199 -->
+                          <source data-srcset="img/banner-mini.webp" media="(min-width: 480px)" type="image/webp">
+                          <source data-srcset="img/banner-mini.jpg" media="(min-width: 480px)">
+                          <!-- 580x249 -->
                           <source data-srcset="img/banner-mini.webp" type="image/webp">
-                          <img class="b-lazy" data-src="img/banner-mini.jpg" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== alt="Баннер" width="" height="">
+                          <img class="b-lazy" data-src="img/banner-mini.jpg" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== alt="Баннер" width="460" height="197">
                         </picture>
                       </div>
                     </a>
@@ -141,8 +165,20 @@
                     <div class="mini-banner">
                       <div class="embed-responsive  embed-responsive--21-9  mini-banner__img">
                         <picture>
+                          <source data-srcset="img/banner-mini.webp" media="(min-width: 1280px)" type="image/webp">
+                          <source data-srcset="img/banner-mini.jpg" media="(min-width: 1280px)">
+                          <!-- 393x169 -->
+                          <source data-srcset="img/banner-mini.webp" media="(min-width: 992px)" type="image/webp">
+                          <source data-srcset="img/banner-mini.jpg" media="(min-width: 992px)">
+                          <!-- 580x249 -->
+                          <source data-srcset="img/banner-mini.webp" media="(min-width: 768px)" type="image/webp">
+                          <source data-srcset="img/banner-mini.jpg" media="(min-width: 768px)">
+                          <!-- 464x199 -->
+                          <source data-srcset="img/banner-mini.webp" media="(min-width: 480px)" type="image/webp">
+                          <source data-srcset="img/banner-mini.jpg" media="(min-width: 480px)">
+                          <!-- 580x249 -->
                           <source data-srcset="img/banner-mini.webp" type="image/webp">
-                          <img class="b-lazy" data-src="img/banner-mini.jpg" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== alt="Баннер" width="" height="">
+                          <img class="b-lazy" data-src="img/banner-mini.jpg" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== alt="Баннер" width="460" height="197">
                         </picture>
                       </div>
                     </div>
@@ -177,8 +213,20 @@
                 <a href="#" class="swiper-slide  magazine-slider" title="Название журнала" download>
                   <div class="embed-responsive  embed-responsive--magazine  magazine-slider__img">
                     <picture>
+                      <source data-srcset="img/magazine.webp" media="(min-width: 1280px)" type="image/webp">
+                      <source data-srcset="img/magazine.jpg" media="(min-width: 1280px)">
+                      <!-- 188x266 -->
+                      <source data-srcset="img/magazine.webp" media="(min-width: 992px)" type="image/webp">
+                      <source data-srcset="img/magazine.jpg" media="(min-width: 992px)">
+                      <!-- 280x396 -->
+                      <source data-srcset="img/magazine.webp" media="(min-width: 768px)" type="image/webp">
+                      <source data-srcset="img/magazine.jpg" media="(min-width: 768px)">
+                      <!-- 220x311 -->
+                      <source data-srcset="img/magazine.webp" media="(min-width: 480px)" type="image/webp">
+                      <source data-srcset="img/magazine.jpg" media="(min-width: 480px)">
+                      <!-- 280x396 -->
                       <source data-srcset="img/magazine.webp" type="image/webp">
-                      <img class="slide-lazy" data-src="img/magazine.jpg" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== alt="Картинка" width="185" height="262">
+                      <img class="slide-lazy" data-src="img/magazine.jpg" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== alt="Картинка" width="220" height="311">
                     </picture>
                   </div>
                   <div class="magazine-slider__caption">№ 1</div>
@@ -187,8 +235,20 @@
                 <a href="#" class="swiper-slide  magazine-slider" title="Название журнала" download>
                   <div class="embed-responsive  embed-responsive--magazine  magazine-slider__img">
                     <picture>
+                      <source data-srcset="img/magazine.webp" media="(min-width: 1280px)" type="image/webp">
+                      <source data-srcset="img/magazine.jpg" media="(min-width: 1280px)">
+                      <!-- 188x266 -->
+                      <source data-srcset="img/magazine.webp" media="(min-width: 992px)" type="image/webp">
+                      <source data-srcset="img/magazine.jpg" media="(min-width: 992px)">
+                      <!-- 280x396 -->
+                      <source data-srcset="img/magazine.webp" media="(min-width: 768px)" type="image/webp">
+                      <source data-srcset="img/magazine.jpg" media="(min-width: 768px)">
+                      <!-- 220x311 -->
+                      <source data-srcset="img/magazine.webp" media="(min-width: 480px)" type="image/webp">
+                      <source data-srcset="img/magazine.jpg" media="(min-width: 480px)">
+                      <!-- 280x396 -->
                       <source data-srcset="img/magazine.webp" type="image/webp">
-                      <img class="slide-lazy" data-src="img/magazine.jpg" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== alt="Картинка" width="185" height="262">
+                      <img class="slide-lazy" data-src="img/magazine.jpg" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== alt="Картинка" width="220" height="311">
                     </picture>
                   </div>
                   <div class="magazine-slider__caption">№ 1</div>
@@ -197,8 +257,20 @@
                 <a href="#" class="swiper-slide  magazine-slider" title="Название журнала" download>
                   <div class="embed-responsive  embed-responsive--magazine  magazine-slider__img">
                     <picture>
+                      <source data-srcset="img/magazine.webp" media="(min-width: 1280px)" type="image/webp">
+                      <source data-srcset="img/magazine.jpg" media="(min-width: 1280px)">
+                      <!-- 188x266 -->
+                      <source data-srcset="img/magazine.webp" media="(min-width: 992px)" type="image/webp">
+                      <source data-srcset="img/magazine.jpg" media="(min-width: 992px)">
+                      <!-- 280x396 -->
+                      <source data-srcset="img/magazine.webp" media="(min-width: 768px)" type="image/webp">
+                      <source data-srcset="img/magazine.jpg" media="(min-width: 768px)">
+                      <!-- 220x311 -->
+                      <source data-srcset="img/magazine.webp" media="(min-width: 480px)" type="image/webp">
+                      <source data-srcset="img/magazine.jpg" media="(min-width: 480px)">
+                      <!-- 280x396 -->
                       <source data-srcset="img/magazine.webp" type="image/webp">
-                      <img class="slide-lazy" data-src="img/magazine.jpg" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== alt="Картинка" width="185" height="262">
+                      <img class="slide-lazy" data-src="img/magazine.jpg" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== alt="Картинка" width="220" height="311">
                     </picture>
                   </div>
                   <div class="magazine-slider__caption">№ 1</div>
@@ -207,8 +279,20 @@
                 <a href="#" class="swiper-slide  magazine-slider" title="Название журнала" download>
                   <div class="embed-responsive  embed-responsive--magazine  magazine-slider__img">
                     <picture>
+                      <source data-srcset="img/magazine.webp" media="(min-width: 1280px)" type="image/webp">
+                      <source data-srcset="img/magazine.jpg" media="(min-width: 1280px)">
+                      <!-- 188x266 -->
+                      <source data-srcset="img/magazine.webp" media="(min-width: 992px)" type="image/webp">
+                      <source data-srcset="img/magazine.jpg" media="(min-width: 992px)">
+                      <!-- 280x396 -->
+                      <source data-srcset="img/magazine.webp" media="(min-width: 768px)" type="image/webp">
+                      <source data-srcset="img/magazine.jpg" media="(min-width: 768px)">
+                      <!-- 220x311 -->
+                      <source data-srcset="img/magazine.webp" media="(min-width: 480px)" type="image/webp">
+                      <source data-srcset="img/magazine.jpg" media="(min-width: 480px)">
+                      <!-- 280x396 -->
                       <source data-srcset="img/magazine.webp" type="image/webp">
-                      <img class="slide-lazy" data-src="img/magazine.jpg" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== alt="Картинка" width="185" height="262">
+                      <img class="slide-lazy" data-src="img/magazine.jpg" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== alt="Картинка" width="220" height="311">
                     </picture>
                   </div>
                   <div class="magazine-slider__caption">№ 1</div>
@@ -217,8 +301,20 @@
                 <a href="#" class="swiper-slide  magazine-slider" title="Название журнала" download>
                   <div class="embed-responsive  embed-responsive--magazine  magazine-slider__img">
                     <picture>
+                      <source data-srcset="img/magazine.webp" media="(min-width: 1280px)" type="image/webp">
+                      <source data-srcset="img/magazine.jpg" media="(min-width: 1280px)">
+                      <!-- 188x266 -->
+                      <source data-srcset="img/magazine.webp" media="(min-width: 992px)" type="image/webp">
+                      <source data-srcset="img/magazine.jpg" media="(min-width: 992px)">
+                      <!-- 280x396 -->
+                      <source data-srcset="img/magazine.webp" media="(min-width: 768px)" type="image/webp">
+                      <source data-srcset="img/magazine.jpg" media="(min-width: 768px)">
+                      <!-- 220x311 -->
+                      <source data-srcset="img/magazine.webp" media="(min-width: 480px)" type="image/webp">
+                      <source data-srcset="img/magazine.jpg" media="(min-width: 480px)">
+                      <!-- 280x396 -->
                       <source data-srcset="img/magazine.webp" type="image/webp">
-                      <img class="slide-lazy" data-src="img/magazine.jpg" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== alt="Картинка" width="185" height="262">
+                      <img class="slide-lazy" data-src="img/magazine.jpg" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== alt="Картинка" width="220" height="311">
                     </picture>
                   </div>
                   <div class="magazine-slider__caption">№ 1</div>
@@ -253,8 +349,20 @@
                 <a href="img/diplom-big.jpg" class="swiper-slide  award-slider" data-fancybox="gallery" data-caption="Caption #1">
                   <div class="embed-responsive  embed-responsive--magazine  award-slider__img">
                     <picture>
+                      <source data-srcset="img/diplom.webp" media="(min-width: 1280px)" type="image/webp">
+                      <source data-srcset="img/diplom.jpg" media="(min-width: 1280px)">
+                      <!-- 188x266 -->
+                      <source data-srcset="img/diplom.webp" media="(min-width: 992px)" type="image/webp">
+                      <source data-srcset="img/diplom.jpg" media="(min-width: 992px)">
+                      <!-- 280x396 -->
+                      <source data-srcset="img/diplom.webp" media="(min-width: 768px)" type="image/webp">
+                      <source data-srcset="img/diplom.jpg" media="(min-width: 768px)">
+                      <!-- 220x311 -->
+                      <source data-srcset="img/diplom.webp" media="(min-width: 480px)" type="image/webp">
+                      <source data-srcset="img/diplom.jpg" media="(min-width: 480px)">
+                      <!-- 280x396 -->
                       <source data-srcset="img/diplom.webp" type="image/webp">
-                      <img class="slide-lazy" data-src="img/diplom.jpg" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== alt="Диплом" width="185" height="262">
+                      <img class="slide-lazy" data-src="img/diplom.jpg" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== alt="Диплом" width="220" height="311">
                     </picture>
                   </div>
                 </a>
@@ -262,8 +370,20 @@
                 <a href="img/diplom-big.jpg" class="swiper-slide  award-slider" data-fancybox="gallery" data-caption="Caption #2">
                   <div class="embed-responsive  embed-responsive--magazine  award-slider__img">
                     <picture>
+                      <source data-srcset="img/diplom.webp" media="(min-width: 1280px)" type="image/webp">
+                      <source data-srcset="img/diplom.jpg" media="(min-width: 1280px)">
+                      <!-- 188x266 -->
+                      <source data-srcset="img/diplom.webp" media="(min-width: 992px)" type="image/webp">
+                      <source data-srcset="img/diplom.jpg" media="(min-width: 992px)">
+                      <!-- 280x396 -->
+                      <source data-srcset="img/diplom.webp" media="(min-width: 768px)" type="image/webp">
+                      <source data-srcset="img/diplom.jpg" media="(min-width: 768px)">
+                      <!-- 220x311 -->
+                      <source data-srcset="img/diplom.webp" media="(min-width: 480px)" type="image/webp">
+                      <source data-srcset="img/diplom.jpg" media="(min-width: 480px)">
+                      <!-- 280x396 -->
                       <source data-srcset="img/diplom.webp" type="image/webp">
-                      <img class="slide-lazy" data-src="img/diplom.jpg" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== alt="Диплом" width="185" height="262">
+                      <img class="slide-lazy" data-src="img/diplom.jpg" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== alt="Диплом" width="220" height="311">
                     </picture>
                   </div>
                 </a>
@@ -271,8 +391,20 @@
                 <a href="img/diplom-big.jpg" class="swiper-slide  award-slider" data-fancybox="gallery" data-caption="Caption #3">
                   <div class="embed-responsive  embed-responsive--magazine  award-slider__img">
                     <picture>
+                      <source data-srcset="img/diplom.webp" media="(min-width: 1280px)" type="image/webp">
+                      <source data-srcset="img/diplom.jpg" media="(min-width: 1280px)">
+                      <!-- 188x266 -->
+                      <source data-srcset="img/diplom.webp" media="(min-width: 992px)" type="image/webp">
+                      <source data-srcset="img/diplom.jpg" media="(min-width: 992px)">
+                      <!-- 280x396 -->
+                      <source data-srcset="img/diplom.webp" media="(min-width: 768px)" type="image/webp">
+                      <source data-srcset="img/diplom.jpg" media="(min-width: 768px)">
+                      <!-- 220x311 -->
+                      <source data-srcset="img/diplom.webp" media="(min-width: 480px)" type="image/webp">
+                      <source data-srcset="img/diplom.jpg" media="(min-width: 480px)">
+                      <!-- 280x396 -->
                       <source data-srcset="img/diplom.webp" type="image/webp">
-                      <img class="slide-lazy" data-src="img/diplom.jpg" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== alt="Диплом" width="185" height="262">
+                      <img class="slide-lazy" data-src="img/diplom.jpg" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== alt="Диплом" width="220" height="311">
                     </picture>
                   </div>
                 </a>
@@ -280,8 +412,20 @@
                 <a href="img/diplom-big.jpg" class="swiper-slide  award-slider" data-fancybox="gallery" data-caption="Caption #4">
                   <div class="embed-responsive  embed-responsive--magazine  award-slider__img">
                     <picture>
+                      <source data-srcset="img/diplom.webp" media="(min-width: 1280px)" type="image/webp">
+                      <source data-srcset="img/diplom.jpg" media="(min-width: 1280px)">
+                      <!-- 188x266 -->
+                      <source data-srcset="img/diplom.webp" media="(min-width: 992px)" type="image/webp">
+                      <source data-srcset="img/diplom.jpg" media="(min-width: 992px)">
+                      <!-- 280x396 -->
+                      <source data-srcset="img/diplom.webp" media="(min-width: 768px)" type="image/webp">
+                      <source data-srcset="img/diplom.jpg" media="(min-width: 768px)">
+                      <!-- 220x311 -->
+                      <source data-srcset="img/diplom.webp" media="(min-width: 480px)" type="image/webp">
+                      <source data-srcset="img/diplom.jpg" media="(min-width: 480px)">
+                      <!-- 280x396 -->
                       <source data-srcset="img/diplom.webp" type="image/webp">
-                      <img class="slide-lazy" data-src="img/diplom.jpg" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== alt="Диплом" width="185" height="262">
+                      <img class="slide-lazy" data-src="img/diplom.jpg" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== alt="Диплом" width="220" height="311">
                     </picture>
                   </div>
                 </a>
@@ -289,8 +433,20 @@
                 <a href="img/diplom-big.jpg" class="swiper-slide  award-slider" data-fancybox="gallery" data-caption="Caption #5">
                   <div class="embed-responsive  embed-responsive--magazine  award-slider__img">
                     <picture>
+                      <source data-srcset="img/diplom.webp" media="(min-width: 1280px)" type="image/webp">
+                      <source data-srcset="img/diplom.jpg" media="(min-width: 1280px)">
+                      <!-- 188x266 -->
+                      <source data-srcset="img/diplom.webp" media="(min-width: 992px)" type="image/webp">
+                      <source data-srcset="img/diplom.jpg" media="(min-width: 992px)">
+                      <!-- 280x396 -->
+                      <source data-srcset="img/diplom.webp" media="(min-width: 768px)" type="image/webp">
+                      <source data-srcset="img/diplom.jpg" media="(min-width: 768px)">
+                      <!-- 220x311 -->
+                      <source data-srcset="img/diplom.webp" media="(min-width: 480px)" type="image/webp">
+                      <source data-srcset="img/diplom.jpg" media="(min-width: 480px)">
+                      <!-- 280x396 -->
                       <source data-srcset="img/diplom.webp" type="image/webp">
-                      <img class="slide-lazy" data-src="img/diplom.jpg" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== alt="Картинка" width="185" height="262">
+                      <img class="slide-lazy" data-src="img/diplom.jpg" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== alt="Диплом" width="220" height="311">
                     </picture>
                   </div>
                 </a>
