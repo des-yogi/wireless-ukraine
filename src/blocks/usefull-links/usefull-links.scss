@@ -1,9 +1,73 @@
-// В этом файле должны быть стили для БЭМ-блока usefull-links, его элементов, 
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
 .usefull-links {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  background-color: $white;
+
+  @media (min-width: $screen-xs) and (max-width: $screen-md - 1) {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+
+  @media (min-width: $screen-md) {
+    padding-left: 32px;
+    padding-right: 32px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  @media (min-width: $screen-xl) {
+    padding: 32px 105px;
+  }
 
   $block-name:                &; // #{$block-name}__element
 
+  &__item {
+
+    & + & {
+      margin-top: 0.5em;
+    }
+  }
+
+  &__table-wrapper {
+    margin-bottom: 0;
+  }
+
+  &__table {
+    min-width: 565px !important;
+
+    th,
+    td {
+      border-bottom: none !important;
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+  }
+
+  &__table-col-title {
+    width: 250px;
+  }
+
+  &__table-col-2 {
+    width: 140px;
+  }
+
+  &__table-col-3 {
+    width: 175px;
+  }
+
+  &__table-subtitle {
+    padding-top: 1.3em !important;
+    padding-bottom: 0.5em !important;
+    font-weight: 500;
+    color: $title-color;
+    border-top: 1px solid $border-color;
+  }
 }

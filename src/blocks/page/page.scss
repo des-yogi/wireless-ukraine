@@ -136,6 +136,7 @@ img {
 }
 
 a {
+  text-decoration-skip-ink: auto;
   text-decoration: none;
   color: $link-color;
   transition: color 0.3s;
@@ -406,6 +407,7 @@ a {
 .facebook-widget {
   max-width: 100%;
   min-height: 200px;
+  height: 100%;
   color: $white;
   background-color: $body-bg;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);
